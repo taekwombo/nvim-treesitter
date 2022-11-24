@@ -13,15 +13,14 @@
  (stream_redirect)
 ] @operator
 
-
 ; match operators of "test" command
 (command
   name: (word) @function (#match? @function "^test$")
-  argument: (word) @operator (#match? @operator "^(!?=|-[a-zA-Z]+)$"))
+  argument: (word) @operator (#match? @operator "^=|!=|-[a-zA-Z]{1,2}$"))
 
 ; match operators of "["
 (test_command
-  argument: (word) @operator (#match? @operator "^(!?=|-[a-zA-Z]+)$"))
+  argument: (word) @operator (#match? @operator "^=|!=|-[a-zA-Z]{1,2}$"))
 
 [
  "not"
